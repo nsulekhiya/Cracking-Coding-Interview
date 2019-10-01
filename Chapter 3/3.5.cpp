@@ -34,7 +34,14 @@ int QueueStack :: dequeue(){
   }
   return elem;
 }
-
+  int elem = popStack.top();
+  while (!popStack.empty()){
+    int temp = popStack.top();
+    popStack.pop();
+    pushStack.push(temp);
+  }
+  return elem;
+}
 int QueueStack :: front(){
   if (pushStack.empty()){   //underflow condition
     cout << "Underflow\n";
