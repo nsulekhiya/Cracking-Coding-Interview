@@ -55,7 +55,13 @@ int QueueStack :: front(){
 }
 
 QueueStack :: QueueStack(){
-
+  while (!popStack.empty()){
+    int temp = popStack.top();
+    popStack.pop();
+    pushStack.push(temp);
+  }
+  return elem;
+}
 }
 int main(){
   QueueStack q;
